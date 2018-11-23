@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>tlosp 网站的登陆页面</title>
+    <link href="/public/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <script src="/public/static/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(
+            function () {
+                $('.alert-close').on('click', function () {
+                    $('.message').fadeOut('slow', function () {
+                        $('.message').remove();
+                    });
+                });
+            });
+    </script>
+</head>
+<body>
+<!-- contact-form -->
+<div class="message warning">
+    <div class="inset">
+        <div class="login-head">
+            <h1>请输入用户信息</h1>
+            <div class="alert-close"></div>
+        </div>
+        <form action="/public/register_usr" method="post">
+            <p class="error-msg">{$invalidUsr}</p>
+            <li>
+                <input id="" type="text" class="text" value="name" name="name" onfocus="this.value = '';"
+                       onblur="if (this.value === '') {this.value = 'Username';}" title="usr_name">
+                <a href="#" class=" icon user"></a>
+            </li>
+            <div class="clear"></div>
+            <li>
+                <input type="password" name="password" value="password" onfocus="this.value = '';"
+                       onblur="if (this.value === '') {this.value = 'Password';}" title="password"
+                       autocomplete="new-password"> <a href="#" class="icon lock"></a>
+            </li>
+            <div class="clear"></div>
+            <div class="submit">
+                <input type="submit" style="width: 100%; margin-top: 0" value="注册">
+                <div class="clear"></div>
+            </div>
+            <div style="margin-top: 5px">
+                <a href="/public/login">返回登陆</a>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="clear"></div>
+
+</body>
+</html>

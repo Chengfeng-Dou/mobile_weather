@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tlosp 网站的登陆页面</title>
+</head>
+<body>
+<img src="/public/static/images/huaji.jpg" style="size: 50px 50px">
+<p>注册成功</p>
+<p>网站将在<span id="num"></span>秒后跳转到登陆页面</p>
+<a href="/public/login">点击此处跳转</a>
+<script type="text/javascript">
+    let num = document.getElementById('num');
+    let time = 5;
+    showTime();
+    function showTime(){
+        num.innerText = String(time);
+        if(time >= 0){
+            time --;
+            setInterval('showTime()', 1000);
+            return;
+        }
+        window.location.href='http://www.tlosp.xyz/public/login';
+    }
+
+</script>
+</body>
+</html>
